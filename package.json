@@ -1,0 +1,24 @@
+{
+  "name": "gsi-planner",
+  "version": "0.1.0",
+  "description": "GSI Schedule Planner - AI-powered task scheduling with PSO, CSP, and AHP optimization",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w frontend\" \"npm run dev -w backend\"",
+    "build": "npm run build -w shared && npm run build -w backend && npm run build -w frontend",
+    "preview": "npm run preview -w frontend",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.3"
+  }
+}
